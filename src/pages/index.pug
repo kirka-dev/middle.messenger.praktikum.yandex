@@ -1,0 +1,19 @@
+extends ../layouts/main.pug
+
+block content
+    div(class='home')
+        ul(class='home__navigation navigation')
+            li(class='navigation__item')
+                a(class='navigation__link' href='/registration.pug') Регистрация
+            li(class='navigation__item navigation__item_sm')
+                a(class='navigation__link' href='/404.pug') 404
+            li(class='navigation__item')
+                a(class='navigation__link' href='/authorization.pug') Авторизация
+            li(class='navigation__item navigation__item_sm')
+                a(class='navigation__link' href='/500.pug') 5**
+            li(class='navigation__item')
+                a(class='navigation__link' href='/user-settings.pug') Настройки пользователя
+            li(class='navigation__item')
+                a(class='navigation__link' href='/chat.pug') Список чатов и лента переписки
+
+

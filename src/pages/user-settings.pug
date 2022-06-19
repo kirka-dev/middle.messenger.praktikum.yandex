@@ -1,0 +1,21 @@
+extends ../layouts/main.pug
+include ../components/settings-input/settings-input
+include ../components/button/button
+
+block content
+    div(class='user-settings')
+        aside(class='user-settings__aside')
+            a(class='user-settings__back-button' href='/chat.pug')
+        form(class='user-settings__form')
+            div(class='user-settings__avatar avatar-edit')
+                input(class='avatar-edit__field' type='file' name='avatar' id='avatar')
+            +input('Почта')(name='email' id='email' value='example@yandex.ru')
+            +input('Логин')(name='login' id='login' value='Kirka')
+            +input('Имя')(name='first_name' id='first_name' value='Дмитрий')
+            +input('Фамилия')(name='second_name' id='second_name' value='Кирка')
+            +input('Имя в чате')(name='display_name' id='display_name' value='Дима')
+            +input('Телефон')(name='phone' id='phone' value='+7 (987) 654-32-10')
+            +input('Пароль')(name='oldPassword' id='oldPassword' type='password')
+            +input('Новый пароль')(name='newPassword' id='newPassword' type='password')
+            +button('Сохранить')(class='user-settings__button' type='submit')
+            a(class='user-settings__link' href='/authorization.pug') Выйти

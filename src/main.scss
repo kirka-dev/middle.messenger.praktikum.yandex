@@ -1,0 +1,364 @@
+@import "normalize.css";
+@import "static/fonts/fonts";
+@import "components/button/button";
+@import "components/input/input";
+@import "components/settings-input/settings-input";
+
+* {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.authorization, .registration {
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+
+  &__form {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    max-width: 360px;
+    border: 1px solid #F2F2F2;
+    border-radius: 3px;
+    padding: 30px 30px 30px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 20px 0;
+  }
+
+  &__button {
+    margin-top: 50px;
+  }
+
+  &__link {
+    color: #000;
+    font-size: 12px;
+    margin-top: 15px;
+    text-decoration: none;
+  }
+}
+
+.user-settings {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  justify-items: center;
+
+  &__aside {
+    display: grid;
+    padding: 0 30px;
+    height: 100%;
+    align-items: center;
+    background-color: #F2F2F2;
+    border-right: solid 1px #E5E5E5;
+    box-sizing: border-box;
+  }
+
+  &__back-button {
+    background-color: #0ABAB5;
+    background-image: url('static/icons/angle-left-solid.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }
+
+  &__form {
+    display: grid;
+    justify-items: center;
+    margin-left: -60px;
+    max-width: 510px;
+    width: 100%;
+  }
+
+  &__button {
+    margin-top: 50px;
+  }
+
+  &__link {
+    color: #000;
+    font-size: 12px;
+    margin-top: 15px;
+    text-decoration: none;
+  }
+}
+
+.avatar-edit {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #F2F2F2;
+  border-radius: 100%;
+  margin-bottom: 50px;
+  background-image: url('static/icons/image-solid.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+
+  &:hover {
+    background-color: #E5E5E5;
+  }
+
+  &__field {
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chat {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(350px, 15%) 1fr;
+  align-items: center;
+  justify-items: center;
+
+  &__aside {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #F2F2F2;
+    border-right: solid 1px #E5E5E5;
+    grid-template-rows: 1fr min-content;
+  }
+
+  &__messages {
+    display: grid;
+    grid-template-rows: 1fr 75px;
+  }
+}
+
+.chat-messages {
+  width: 100%;
+  height: 100%;
+
+  &__list {
+    display: grid;
+    align-content: end;
+    height: 100%;
+    padding: 15px 15px 30px;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    justify-items: start;
+  }
+
+  &__field {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    border-top: solid 1px #F2F2F2;
+    padding: 0 30px;
+    align-items: center;
+    column-gap: 15px;
+    margin: 0 15px;
+  }
+
+  &__input {
+    height: 37px;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+
+  &__button {
+    height: 37px;
+    width: 37px;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #0ABAB5;
+    border-radius: 100%;
+    background-color: #0ABAB5;
+    color: #FFFFFF;
+    background-image: url('static/icons/paper-plane-solid.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 40%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.messages-list {
+  &__message {
+    display: table;
+    padding: 15px;
+    border-radius: 0px 10px 10px 10px;
+    background-color: #E5E5E5;
+    max-width: 300px;
+    margin: 10px 0;
+
+    &_output {
+      margin-left: auto;
+      background-color: #F2F2F2;
+      border-radius: 10px 10px 0px 10px;
+    }
+  }
+}
+
+.chat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+  box-sizing: border-box;
+  height: 100%;
+
+  &__user {
+    padding: 15px 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E5E5E5;
+    display: grid;
+    grid-template-columns: 50px 1fr min-content;
+    grid-template-rows: min-content 1fr;
+    column-gap: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    grid-row: 1/3;
+    align-self: center;
+    background-color: #45797A;
+    border-radius: 100%;
+  }
+
+  &__name {
+    padding: 0 0 5px;
+    margin: 0;
+    grid-row: 1;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  &__last-message {
+    padding: 0;
+    font-size: 12px;
+    margin: 0;
+    grid-row: 2;
+    color: #45797A;
+  }
+
+  &__time {
+    font-size: 10px;
+  }
+
+  &__unread {
+    width: 20px;
+    height: 20px;
+    background-color: #45797A;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    font-size: 11px;
+    color: #FFFFFF;
+    align-self: center;
+  }
+}
+
+.chat-menu {
+  display: grid;
+  border-top: solid 1px #E5E5E5;
+  padding: 0 5px;
+  align-items: center;
+  margin: 0 15px;
+  height: 74px;
+  justify-content: end;
+
+  &__item {
+    width: 37px;
+    height: 37px;
+    border-radius: 100%;
+
+    &_user-settings {
+      background-color: #0ABAB5;
+      color: #FFFFFF;
+      background-image: url('static/icons/gears-solid.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+    }
+  }
+}
+
+.error-page {
+  height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+
+  &__number {
+    font-size: 72px;
+    margin: 0;
+  }
+
+  &__link {
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.home {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr min-content;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__item {
+    margin: 5px 0;
+    grid-column: 1;
+
+    &_sm {
+      grid-column: 2;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    transition: .2s;
+    padding-right: 30px;
+
+    &:hover {
+      transform: translateX(-10px);
+    }
+  }
+}
