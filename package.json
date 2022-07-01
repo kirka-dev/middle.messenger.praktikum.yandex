@@ -1,0 +1,30 @@
+{
+  "name": "Messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build && node server.js",
+    "dev": "parcel src/pages/*.pug -d docs --port 3000 --open",
+    "build": "parcel build src/pages/*.pug -d docs --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirka-dev/middle.messenger.praktikum.yandex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.1",
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.12.5",
+    "pug": "^3.0.2",
+    "sass": "^1.52.3"
+  },
+  "dependencies": {
+    "static": "^2.0.0"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  }
+}
