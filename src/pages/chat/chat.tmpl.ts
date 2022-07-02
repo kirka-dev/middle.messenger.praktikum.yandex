@@ -1,7 +1,4 @@
-extends ../layouts/main.pug
-
-block content
-    div(class='chat')
+export const chat = `div(class='chat')
         aside(class='chat__aside chat-aside')
             ul(class='chat__list chat-list')
                 li(class='chat-list__user')
@@ -19,6 +16,7 @@ block content
                 a(class='chat-menu__item chat-menu__item_user-settings' href='./user-settings.pug')
         section(class='chat__messages chat-messages')
             ul(class='chat-messages__list messages-list')
+                #{message}
                 li(class='messages-list__message messages-list__message_input') Тук-тук
                 li(class='messages-list__message messages-list__message_output') Кто там?
                 li(class='messages-list__message messages-list__message_input') Служба ремонта дверных звонков.
@@ -26,3 +24,5 @@ block content
             form(class='chat-messages__field')
                 input(class='chat-messages__input' placeholder='Сообщение' name='message' id='message')
                 button(class='chat-messages__button' type='submit')
+
+`

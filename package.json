@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run build && node server.js",
-    "dev": "parcel src/pages/*.pug -d docs --port 3000 --open",
-    "build": "parcel build src/pages/*.pug -d docs --public-url ./"
+    "dev": "parcel src/pages/*.pug --dist-dir docs --port 3000 --open --no-cache",
+    "build": "parcel build src/pages/index.pug --dist-dir docs --public-url ./ --no-cache",
+    "preinstall": "npm set registry https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
@@ -15,13 +16,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.6.2",
+    "@parcel/transformer-sass": "^2.6.2",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
     "express": "^4.18.1",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.5",
-    "pug": "^3.0.2",
-    "sass": "^1.52.3"
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.6.2",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "pug": "^3.0.2"
   },
   "dependencies": {
+    "@types/pug": "^2.0.6",
     "static": "^2.0.0"
   },
   "engines": {
