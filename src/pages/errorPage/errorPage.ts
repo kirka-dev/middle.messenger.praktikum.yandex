@@ -1,6 +1,6 @@
-import * as pug from "pug";
-import {Block} from "../../services/Block";
-import {errorPage} from "./errorPage.tmpl";
+import {Block} from "../../shared/services/Block";
+
+import {errorPageTmpl} from "./errorPage.tmpl";
 
 export class ErrorPage extends Block {
     constructor(props: any) {
@@ -8,7 +8,6 @@ export class ErrorPage extends Block {
     }
 
     render() {
-        const compiledFunction = pug.compile(errorPage);
-        return compiledFunction(this.props);
+        return this.compile(errorPageTmpl, this.props);
     }
 }

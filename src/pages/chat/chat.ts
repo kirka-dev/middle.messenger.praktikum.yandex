@@ -1,7 +1,7 @@
-import * as pug from "pug";
-import {Block} from "../../services/Block";
-import {chat} from "./chat.tmpl";
-import {Message} from "../../components/messege/message";
+import {Block} from "../../shared/services/Block";
+import {Message} from "../../shared/components/messege/message";
+
+import {chatTmpl} from "./chat.tmpl";
 
 export class Chat extends Block {
     constructor(props: any) {
@@ -9,18 +9,17 @@ export class Chat extends Block {
     }
 
     render() {
-        const compiledFunction = pug.compile(chat);
-
-        return compiledFunction(this.props);
+        return this.compile(chatTmpl, this.props);
     }
 }
 
 const message = new Message({
     text: 'text',
+    className: 'messages-list__message',
     events: {
         click: () => alert('a')
     }
-}).getContent();
+});
 
 export const Components = {
     message

@@ -1,7 +1,7 @@
 @import "static/fonts/fonts";
-@import "components/button/button";
-@import "components/input/input";
-@import "components/settings-input/settings-input";
+@import "shared/components/button/button";
+@import "shared/components/input/input";
+@import "shared/components/settings-input/settings-input";
 
 * {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -9,7 +9,7 @@
 
 .authorization, .registration {
   display: grid;
-  height: 100vh;
+  height: calc(100vh - 30px);
   align-items: center;
   justify-items: center;
 
@@ -44,7 +44,7 @@
 }
 
 .user-settings {
-  height: 100vh;
+  height: calc(100vh - 30px);
   display: grid;
   grid-template-columns: min-content 1fr;
   align-items: center;
@@ -118,7 +118,7 @@
 }
 
 .chat {
-  height: 100vh;
+  height: calc(100vh - 30px);
   display: grid;
   grid-template-columns: minmax(350px, 15%) 1fr;
   align-items: center;
@@ -304,7 +304,7 @@
 }
 
 .error-page {
-  height: 100vh;
+  height: calc(100vh - 30px);
   display: grid;
   align-content: center;
   justify-content: center;
@@ -326,27 +326,23 @@
 }
 
 .home {
-  height: 100vh;
+  height: 30px;
   display: grid;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #0abab5
 }
 
 .navigation {
   display: grid;
   grid-auto-rows: min-content;
-  grid-template-columns: 1fr min-content;
+  grid-auto-flow: column;
   padding: 0;
   margin: 0;
   list-style: none;
 
   &__item {
     margin: 5px 0;
-    grid-column: 1;
-
-    &_sm {
-      grid-column: 2;
-    }
   }
 
   &__link {
@@ -355,9 +351,10 @@
     text-decoration: none;
     transition: .2s;
     padding-right: 30px;
+    font-size: 10px;
 
     &:hover {
-      transform: translateX(-10px);
+      transform: translateY(2px);
     }
   }
 }

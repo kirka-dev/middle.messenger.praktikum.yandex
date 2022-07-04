@@ -1,4 +1,4 @@
-export const chat = `div(class='chat')
+export const chatTmpl = `div(class='chat')
         aside(class='chat__aside chat-aside')
             ul(class='chat__list chat-list')
                 li(class='chat-list__user')
@@ -13,7 +13,7 @@ export const chat = `div(class='chat')
                     div(class='chat-list__time') 18:48
                     div(class='chat-list__unread') 3
             div(class='chat-aside__menu chat-menu')
-                a(class='chat-menu__item chat-menu__item_user-settings' href='./user-settings.pug')
+                a(class='chat-menu__item chat-menu__item_user-settings' href='./settings')
         section(class='chat__messages chat-messages')
             ul(class='chat-messages__list messages-list')
                 #{message}

@@ -1,9 +1,13 @@
 import * as pug from "pug";
+import {v4 as makeUUID} from 'uuid';
 import {EventBus} from "./EvenBus";
+import {compile} from "pug";
 
 export class Block {
-    protected readonly props: any;
+    private readonly _id: any;
+    private children: {};
     private eventBus: () => EventBus;
+    props: any;
 
     static EVENTS = {
         INIT: "init",
@@ -15,15 +19,17 @@ export class Block {
     _element = null;
     _meta = null;
 
-    constructor(props = {}) {
+    constructor(propsAndChildren = {}, tagName = 'template') {
         const eventBus = new EventBus();
-        this._meta = {props};
+        const { children, props } = this._getChildren(propsAndChildren);
 
-        this.props = this._makePropsProxy(props);
-
+        this._meta = {tagName, props};
+        this._id = makeUUID();
+        this.props = this._makePropsProxy({ ...props, __id: this._id });
+        this.children = children;
         this.eventBus = () => eventBus;
-
         this._registerEvents(eventBus);
+
         eventBus.emit(Block.EVENTS.INIT);
     }
 
@@ -34,17 +40,38 @@ export class Block {
         eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
     }
 
+    _getChildren(propsAndChildren) {
+        const children = {};
+        const props = {};
+
+        Object.entries(propsAndChildren).forEach(([key, value]) => {
+            if (value instanceof Block) {
+                children[key] = value;
+            } else {
+                props[key] = value;
+            }
+        });
+
+        return { children, props };
+    }
+
     _createResources() {
-        this._element = this._createDocumentElement();
+        const { tagName } = this._meta;
+        this._element = this._createDocumentElement(tagName);
     }
 
     init() {
         this._createResources();
+
         this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
 
     _componentDidMount() {
         this.componentDidMount();
+
+        Object.values(this.children).forEach(child => {
+            child.dispatchComponentDidMount();
+        });
     }
 
     componentDidMount(oldProps?) {}
@@ -77,19 +104,38 @@ export class Block {
         return this._element;
     }
 
+    compile(template, props) {
+        const propsAndStubs = { ...props };
+
+        Object.entries(this.children).forEach(([key, child]) => {
+            propsAndStubs[key] = `plug data-id="${child._id}"`;
+        });
+
+        const fragment = this._createDocumentElement('template');
+        const compileFunc = pug.compile(template)
+
+        fragment.innerHTML = compileFunc(propsAndStubs);
+
+        Object.values(this.children).forEach(child => {
+            const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+            stub.replaceWith(child.getContent());
+        });
+
+        return fragment.content;
+    }
+
     _render() {
         const block = this.render();
+        block = block;
 
-        this._element.innerHTML = block;
+        this._element.appendChild(block);
+        this._addEvents();
     }
 
     render() {}
 
     getContent() {
-        const content = this.element.content.firstChild.cloneNode(true);
-        this._addEventListeners(content);
-
-        return content;
+        return this.element.firstChild;
     }
 
     _makePropsProxy(props) {
@@ -112,15 +158,17 @@ export class Block {
         });
     }
 
-    _createDocumentElement() {
-        return document.createElement("template");
+    _createDocumentElement(tagName) {
+        const element = document.createElement(tagName);
+        element.setAttribute('data-id', this._id);
+        return element;
     }
 
-    _addEventListeners(element) {
-        const {events = {}} = this.props;
+    _addEvents() {
+        const {events = {}} = this.props || {};
 
         Object.keys(events).forEach(eventName => {
-            element.addEventListener(eventName, events[eventName]);
+            this._element.firstChild.addEventListener(eventName, events[eventName]);
         });
     }
 }
