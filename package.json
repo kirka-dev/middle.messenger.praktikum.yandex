@@ -7,8 +7,8 @@
     "start": "npm run build && node server.js",
     "dev": "parcel src/pages/*.pug --dist-dir docs --port 3000 --open --no-cache",
     "build": "parcel build src/pages/index.pug --dist-dir docs --public-url ./ --no-cache",
-    "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
+    "eslint:fix": "./node_modules/.bin/eslint . --fix",
     "preinstall": "npm set registry https://registry.npmjs.org/"
   },
   "repository": {
@@ -34,7 +34,8 @@
     "pug": "^3.0.2",
     "stylelint": "^14.9.1",
     "stylelint-config-recommended-scss": "^6.0.0",
-    "stylelint-scss": "^4.2.0"
+    "stylelint-scss": "^4.2.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "@types/pug": "^2.0.6",

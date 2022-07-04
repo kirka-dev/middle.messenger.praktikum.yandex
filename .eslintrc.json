@@ -7,7 +7,7 @@
     "@typescript-eslint/no-unused-vars": 2
   },
   "ignorePatterns": [
-    "node_modules/**/*",
+    "node_modiles/**/*",
     "docs/**/*"
   ]
 }
