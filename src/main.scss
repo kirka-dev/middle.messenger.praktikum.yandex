@@ -1,7 +1,6 @@
 @import "static/fonts/fonts";
 @import "shared/components/button/button";
 @import "shared/components/input/input";
-@import "shared/components/settings-input/settings-input";
 
 * {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -116,6 +115,30 @@
     height: 100%;
   }
 }
+
+.settings-input {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr max-content;
+  border-bottom: 1px solid #F2F2F2;
+  width: 100%;
+
+  &__label {
+    font-size: 13px;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    width: 200px;
+    height: 37px;
+    margin: 0;
+    padding: 0 5px;
+    outline: none;
+    border: none;
+    font-size: 13px;
+  }
+}
+
 
 .chat {
   height: calc(100vh - 30px);

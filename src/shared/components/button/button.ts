@@ -1,4 +1,5 @@
 import {Block} from "../../services/Block";
+
 import {buttonTmpl} from "./button.tmpl";
 
 export class Button extends Block {

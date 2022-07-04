@@ -16,9 +16,6 @@ export class Chat extends Block {
 const message = new Message({
     text: 'text',
     className: 'messages-list__message',
-    events: {
-        click: () => alert('a')
-    }
 });
 
 export const Components = {

@@ -10,6 +10,9 @@ import {ErrorPage} from "./pages/errorPage/errorPage";
 document.addEventListener("DOMContentLoaded", () => {
     let page: Block;
     switch(document.location.pathname) {
+        case "/":
+            page = new Authorization({...AuthorizationComponents})
+            break;
         case "/authorization":
             page = new Authorization({...AuthorizationComponents})
             break;
@@ -21,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         case "/chat":
             page = new Chat({...ChatComponents});
+            break;
+        case "/500":
+            page = new ErrorPage({code: 500});
             break;
         default:
             page = new ErrorPage({code: 404});

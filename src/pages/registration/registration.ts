@@ -18,35 +18,40 @@ export class Registration extends Block {
 const inputEmail = new Input({
     placeholder: 'Почта',
     attributes: {
-        id: 'email'
+        id: 'email',
+        name: 'email'
     }
 });
 
 const inputLogin = new Input({
     placeholder: 'Логин',
     attributes: {
-        id: 'login'
+        id: 'login',
+        name: 'login'
     }
 });
 
 const inputFirstName = new Input({
     placeholder: 'Имя',
     attributes: {
-        id: 'first_name'
+        id: 'first_name',
+        name: 'first_name'
     }
 });
 
 const inputSecondName = new Input({
     placeholder: 'Фамилия',
     attributes: {
-        id: 'second_name'
+        id: 'second_name',
+        name: 'second_name'
     }
 });
 
 const inputPhone = new Input({
     placeholder: 'Телефон',
     attributes: {
-        id: 'phone'
+        id: 'phone',
+        name: 'phone'
     }
 });
 
@@ -54,14 +59,16 @@ const inputPassword = new Input({
     placeholder: 'Пароль',
     attributes: {
         type: 'password',
-        id: 'password'
+        id: 'password',
+        name: 'password'
     }
 });
 
 const inputPasswordRepeat = new Input({
     placeholder: 'Пароль (Еще раз)',
     attributes: {
-        type: 'password'
+        type: 'password',
+        id: 'passwordRepeat'
     }
 });
 

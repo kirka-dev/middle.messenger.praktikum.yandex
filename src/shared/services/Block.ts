@@ -165,10 +165,14 @@ export class Block {
     }
 
     _addEvents() {
-        const {events = {}} = this.props || {};
+        this.props.events && Object.keys(this.props.events).forEach(eventName => {
+            this._element.firstChild.addEventListener(eventName, this.props.events[eventName]);
+        });
 
-        Object.keys(events).forEach(eventName => {
-            this._element.firstChild.addEventListener(eventName, events[eventName]);
+        this.props.childEvents && Object.keys(this.props.childEvents).forEach(child => {
+            Object.keys(this.props.childEvents[child]).forEach(eventName => {
+                this._element.querySelector(child).addEventListener(eventName, this.props.childEvents[child][eventName]);
+            });
         });
     }
 }

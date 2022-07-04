@@ -17,42 +17,48 @@ export class UserSettings extends Block {
 const inputEmail = new Input({
     placeholder: 'Почта',
     attributes: {
-        id: 'email'
+        id: 'email',
+        name: 'email'
     }
 });
 
 const inputLogin = new Input({
     placeholder: 'Логин',
     attributes: {
-        id: 'login'
+        id: 'login',
+        name: 'login'
     }
 });
 
 const inputFirstName = new Input({
     placeholder: 'Имя',
     attributes: {
-        id: 'first_name'
+        id: 'first_name',
+        name: 'first_name'
     }
 });
 
 const inputSecondName = new Input({
     placeholder: 'Фамилия',
     attributes: {
-        id: 'second_name'
+        id: 'second_name',
+        name: 'second_name'
     }
 });
 
 const inputDisplayName = new Input({
     placeholder: 'Имя в чате',
     attributes: {
-        id: 'display_name'
+        id: 'display_name',
+        name: 'display_name'
     }
 });
 
 const inputPhone = new Input({
     placeholder: 'Телефон',
     attributes: {
-        id: 'phone'
+        id: 'phone',
+        name: 'phone'
     }
 });
 
@@ -60,7 +66,8 @@ const inputOldPassword = new Input({
     placeholder: 'Пароль',
     attributes: {
         type: 'password',
-        id: 'oldPassword'
+        id: 'oldPassword',
+        name: 'oldPassword'
     }
 });
 
@@ -68,7 +75,8 @@ const inputNewPassword = new Input({
     placeholder: 'Пароль (Еще раз)',
     attributes: {
         type: 'password',
-        id: 'newPassword'
+        id: 'newPassword',
+        name: 'newPassword'
     }
 });
 

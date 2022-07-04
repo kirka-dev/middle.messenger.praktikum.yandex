@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@types/pug": "^2.0.6",
-    "static": "^2.0.0",
     "uuid": "^8.3.2"
   },
   "engines": {

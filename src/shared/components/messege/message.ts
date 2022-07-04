@@ -1,4 +1,5 @@
 import {Block} from "../../services/Block";
+
 import {messageTmpl} from "./message.tmpl";
 
 export class Message extends Block {
