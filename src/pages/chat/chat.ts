@@ -1,5 +1,5 @@
 import {Block} from "../../shared/services/Block";
-import {Message} from "../../shared/components/messege/message";
+import {Message} from "./components/messege/message";
 
 import {chatTmpl} from "./chat.tmpl";
 
@@ -14,8 +14,8 @@ export class Chat extends Block {
 }
 
 const message = new Message({
-    text: 'text',
-    className: 'messages-list__message',
+    text: 'Тук-тук',
+    className: 'messages-list__message messages-list__message_input',
 });
 
 export const Components = {

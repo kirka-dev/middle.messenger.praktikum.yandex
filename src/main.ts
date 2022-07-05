@@ -1,6 +1,6 @@
-import 'normalize.css';
+// import 'normalize.css';
 import {Block} from "./shared/services/Block";
-import {render} from "./shared/utils/Render";
+import {render} from "./shared/utils/render";
 import {Authorization, Components as AuthorizationComponents} from "./pages/authorization/authorization";
 import {Registration, Components as RegistrationComponent} from "./pages/registration/registration";
 import {UserSettings, Components as UserSettingsComponent} from "./pages/user-settings/user-settings";

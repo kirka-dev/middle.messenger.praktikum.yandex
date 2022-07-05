@@ -2,6 +2,7 @@ import * as pug from "pug";
 import {v4 as makeUUID} from 'uuid';
 import {EventBus} from "./EvenBus";
 import {compile} from "pug";
+import {inputValidate} from "../utils/validate";
 
 export class Block {
     private readonly _id: any;
@@ -97,6 +98,7 @@ export class Block {
             return;
         }
 
+        this.eventBus().emit(Block.EVENTS.FLOW_CDU);
         Object.assign(this.props, nextProps);
     };
 
@@ -130,6 +132,7 @@ export class Block {
 
         this._element.appendChild(block);
         this._addEvents();
+        this._addValidate();
     }
 
     render() {}
@@ -174,5 +177,11 @@ export class Block {
                 this._element.querySelector(child).addEventListener(eventName, this.props.childEvents[child][eventName]);
             });
         });
+    }
+
+    _addValidate() {
+        this._element.firstChild.querySelectorAll('input').forEach(input => {
+            input.addEventListener('blur', e => inputValidate(e.target))
+        })
     }
 }

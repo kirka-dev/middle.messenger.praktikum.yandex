@@ -78,7 +78,7 @@
         width: 100%;
     }
 
-    &__button {
+    button {
         margin-top: 50px;
     }
 
@@ -135,6 +135,14 @@
         outline: none;
         border: none;
         font-size: 13px;
+    }
+
+    &_error {
+        .settings-input {
+            &__field {
+                border-bottom: 1px solid red;
+            }
+        }
     }
 }
 

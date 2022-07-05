@@ -1,8 +1,11 @@
 import {Block} from "../../shared/services/Block";
 import {Input} from "../../shared/components/input/input";
 import {Button} from "../../shared/components/button/button";
+import {submitForm} from "../../shared/utils/submitForm";
 
 import {authorizationTmpl} from "./authorization.tmpl";
+import {inputValidate} from "../../shared/utils/validate";
+import {PATTERNS} from "../../shared/consts/patterns";
 
 export class Authorization extends Block {
     constructor(props: any) {
@@ -18,6 +21,7 @@ const inputLogin = new Input({
     attributes: {
         id: 'login',
         name: 'login',
+        'data-pattern': 'login',
     }
 });
 
@@ -26,24 +30,15 @@ const inputPassword = new Input({
     attributes: {
         type: 'password',
         id: 'password',
-        name: 'password'
+        name: 'password',
+        'data-pattern': 'password',
     }
 });
 
 const buttonSubmit = new Button({
     text: 'Вход',
     events: {
-        click: (e) => {
-            const data = new FormData(document.querySelector('form'));
-            const result = {};
-
-            for (const [key, value] of data) {
-                result[key] = value;
-            }
-
-            console.log(result);
-            // e.preventDefault();
-        }
+        click: (e) => submitForm(e, 'form')
     }
 })
 

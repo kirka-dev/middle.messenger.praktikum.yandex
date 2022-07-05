@@ -13,4 +13,21 @@
         border-bottom: 1px solid #F2F2F2;
         font-size: 13px;
     }
+
+    &__error {
+        height: 7px;
+        font-size: 7px;
+        padding: 3px 0;
+        margin: 0;
+        text-align: right;
+        color: red;
+    }
+
+    &_error {
+        .input {
+            &__field {
+                border-bottom: 1px solid red;
+            }
+        }
+    }
 }

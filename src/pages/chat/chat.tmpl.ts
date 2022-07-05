@@ -17,12 +17,8 @@ export const chatTmpl = `div(class='chat')
         section(class='chat__messages chat-messages')
             ul(class='chat-messages__list messages-list')
                 #{message}
-                li(class='messages-list__message messages-list__message_input') Тук-тук
-                li(class='messages-list__message messages-list__message_output') Кто там?
-                li(class='messages-list__message messages-list__message_input') Служба ремонта дверных звонков.
-                li(class='messages-list__message messages-list__message_output') 😂😂😂
             form(class='chat-messages__field')
-                input(class='chat-messages__input' placeholder='Сообщение' name='message' id='message')
+                input(class='chat-messages__input' placeholder='Сообщение' name='message' id='message' required)
                 button(class='chat-messages__button' type='submit')
 
 `

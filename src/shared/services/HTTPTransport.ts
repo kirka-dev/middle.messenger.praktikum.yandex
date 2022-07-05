@@ -1,4 +1,4 @@
-import {queryStringify} from "../utils/QueryStringify";
+import {queryStringify} from "../utils/queryStringify";
 import {METHODS} from "../consts/methods";
 
 interface IOptions {
