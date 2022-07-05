@@ -1,7 +1,7 @@
-import * as pug from "pug";
-import {v4 as makeUUID} from 'uuid';
-import {EventBus} from "./EvenBus";
 import {compile} from "pug";
+// @ts-ignore
+import {v4 as makeUUID} from "uuid";
+import {EventBus} from "./EvenBus";
 import {inputValidate} from "../utils/validate";
 
 export class Block {
@@ -114,7 +114,7 @@ export class Block {
         });
 
         const fragment = this._createDocumentElement('template');
-        const compileFunc = pug.compile(template)
+        const compileFunc = compile(template)
 
         fragment.innerHTML = compileFunc(propsAndStubs);
 
@@ -128,8 +128,6 @@ export class Block {
 
     _render() {
         const block = this.render();
-        block = block;
-
         this._element.appendChild(block);
         this._addEvents();
         this._addValidate();
