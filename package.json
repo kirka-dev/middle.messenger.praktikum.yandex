@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "source": "src/pages/yraindex.pug",
   "scripts": {
     "start": "npm run build && node server.js",
-    "dev": "parcel src/pages/*.pug --dist-dir docs --port 3000 --open --no-cache",
-    "build": "parcel build src/pages/index.pug --dist-dir docs --public-url ./ --no-cache",
+    "dev": "parcel src/main.pug --dist-dir docs --port 3000 --open --no-cache",
+    "build": "parcel build src/main.pug --dist-dir docs --public-url ./ --no-cache",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "eslint:fix": "./node_modules/.bin/eslint . --fix",
     "preinstall": "npm set registry https://registry.npmjs.org/"
