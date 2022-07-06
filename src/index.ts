@@ -1,4 +1,4 @@
-import 'normalize.css';
+// import 'normalize.css';
 import {Block} from "./shared/services/Block";
 import {render} from "./shared/utils/render";
 import {Authorization, Components as AuthorizationComponents} from "./pages/authorization/authorization";
