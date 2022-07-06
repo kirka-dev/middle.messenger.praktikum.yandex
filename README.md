@@ -11,3 +11,7 @@
 >npm run dev - запуск для разработки.
 
 >npm run build - запуск сборки.
+
+### Pull requests
+https://github.com/kirka-dev/middle.messenger.praktikum.yandex/pull/1
+https://github.com/kirka-dev/middle.messenger.praktikum.yandex/pull/3
