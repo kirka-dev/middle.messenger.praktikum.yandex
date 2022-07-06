@@ -13,7 +13,7 @@ export const chatTmpl = `div(class='chat')
                     div(class='chat-list__time') 18:48
                     div(class='chat-list__unread') 3
             div(class='chat-aside__menu chat-menu')
-                a(class='chat-menu__item chat-menu__item_user-settings' href='./settings')
+                a(class='chat-menu__item chat-menu__item_user-settings' href='./?page=settings')
         section(class='chat__messages chat-messages')
             ul(class='chat-messages__list messages-list')
                 #{message}

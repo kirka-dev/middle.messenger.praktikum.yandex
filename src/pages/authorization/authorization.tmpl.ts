@@ -4,4 +4,4 @@ export const authorizationTmpl = `div(class='authorization')
             #{inputLogin}
             #{inputPassword}
             #{buttonSubmit}
-            a(class='authorization__link' href='./registration') Нет аккаунта?`
+            a(class='authorization__link' href='./?page=registration') Нет аккаунта?`

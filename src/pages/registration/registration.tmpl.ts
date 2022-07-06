@@ -9,5 +9,5 @@ export const registrationTmpl = `div(class='registration')
             #{inputPassword}
             #{inputPasswordRepeat}
             #{buttonSubmit}
-            a(class='authorization__link' href='./authorization') Войти
+            a(class='authorization__link' href='./?page=authorization') Войти
 `

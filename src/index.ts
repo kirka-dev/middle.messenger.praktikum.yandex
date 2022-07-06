@@ -1,4 +1,4 @@
-// import 'normalize.css';
+import 'normalize.css';
 import {Block} from "./shared/services/Block";
 import {render} from "./shared/utils/render";
 import {Authorization, Components as AuthorizationComponents} from "./pages/authorization/authorization";
@@ -9,23 +9,23 @@ import {ErrorPage} from "./pages/errorPage/errorPage";
 
 document.addEventListener("DOMContentLoaded", () => {
     let page: Block;
-    switch(document.location.pathname) {
-        case "/":
+    switch(document.location.search) {
+        case "":
             page = new Authorization({...AuthorizationComponents})
             break;
-        case "/authorization":
+        case "?page=authorization":
             page = new Authorization({...AuthorizationComponents})
             break;
-        case "/registration":
+        case "?page=registration":
             page = new Registration({...RegistrationComponent})
             break;
-        case "/settings":
+        case "?page=settings":
             page = new UserSettings({...UserSettingsComponent})
             break;
-        case "/chat":
+        case "?page=chat":
             page = new Chat({...ChatComponents});
             break;
-        case "/500":
+        case "?page=500":
             page = new ErrorPage({code: 500});
             break;
         default:
