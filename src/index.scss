@@ -2,7 +2,7 @@
 @import "shared/components/button/button";
 @import "shared/components/input/input";
 
-* {
+.app {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
@@ -230,7 +230,7 @@
     &__message {
         display: table;
         padding: 15px;
-        border-radius: 0px 10px 10px 10px;
+        border-radius: 0 10px 10px 10px;
         background-color: #E5E5E5;
         max-width: 300px;
         margin: 10px 0;
@@ -238,7 +238,7 @@
         &_output {
             margin-left: auto;
             background-color: #F2F2F2;
-            border-radius: 10px 10px 0px 10px;
+            border-radius: 10px 10px 0 10px;
         }
     }
 }
