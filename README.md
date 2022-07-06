@@ -12,5 +12,5 @@
 
 >npm run build - запуск сборки.
 
-### Pull
-[https://github.com/kirka-dev/middle.messenger.praktikum.yandex/pull/2](https://github.com/kirka-dev/middle.messenger.praktikum.yandex/pull/2)
+### Pull request
+>[https://github.com/kirka-dev/middle.messenger.praktikum.yandex/pull/2](https://github.com/kirka-dev/middle.messenger.praktikum.yandex/pull/2)
