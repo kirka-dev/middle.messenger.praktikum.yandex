@@ -1,6 +1,16 @@
 import {PATTERNS} from "../consts/patterns";
 
-export function inputValidate(input: HTMLInputElement) {
+function addError(wrapper: HTMLElement, message: string, className: string) {
+    wrapper.classList.add(`${className}_error`);
+    wrapper.querySelector(`.${className}__error`) && (wrapper.querySelector(`.${className}__error`).textContent = message);
+}
+
+function removeError(wrapper: HTMLElement, className: string) {
+    wrapper.classList.remove(`${className}_error`);
+    wrapper.querySelector(`.${className}__error`) && (wrapper.querySelector(`.${className}__error`).textContent = null);
+}
+
+export function inputValidate(input: any) {
     const wrapper = input.parentElement;
     const className = wrapper.className.split(' ')[0];
     const state = {
@@ -10,14 +20,11 @@ export function inputValidate(input: HTMLInputElement) {
     const valid = input.value.match(state.pattern);
 
     if (state.required && !input.value) {
-        wrapper.classList.add(`${className}_error`);
-        wrapper.querySelector(`.${className}__error`) && (wrapper.querySelector(`.${className}__error`).textContent = 'Обязательное поле');
+        addError(wrapper, 'Обязательное поле', className);
     }else if (state.pattern && !valid) {
-        wrapper.classList.add(`${className}_error`);
-        wrapper.querySelector(`.${className}__error`) && (wrapper.querySelector(`.${className}__error`).textContent = 'Заполнено некорректно');
+        addError(wrapper, 'Заполнено некорректно', className);
     } else {
-        wrapper.classList.remove(`${className}_error`);
-        wrapper.querySelector(`.${className}__error`) && (wrapper.querySelector(`.${className}__error`).textContent = null);
+        removeError(wrapper, className);
     }
 }
 

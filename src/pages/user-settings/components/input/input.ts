@@ -1,9 +1,10 @@
 import {Block} from "../../../../shared/services/Block";
+import {InputProps} from "../interfaces/inputProps";
 
 import {inputTmpl} from "./input.tmpl";
 
 export class Input extends Block {
-    constructor(props: any) {
+    constructor(props: InputProps) {
         super(props);
     }
 

@@ -1,11 +1,10 @@
 import {Block} from "../../shared/services/Block";
 import {Input} from "../../shared/components/input/input";
 import {Button} from "../../shared/components/button/button";
+import {inputValidate} from "../../shared/utils/validate";
 import {submitForm} from "../../shared/utils/submitForm";
 
 import {authorizationTmpl} from "./authorization.tmpl";
-import {inputValidate} from "../../shared/utils/validate";
-import {PATTERNS} from "../../shared/consts/patterns";
 
 export class Authorization extends Block {
     constructor(props: any) {
@@ -22,6 +21,11 @@ const inputLogin = new Input({
         id: 'login',
         name: 'login',
         'data-pattern': 'login',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -32,6 +36,11 @@ const inputPassword = new Input({
         id: 'password',
         name: 'password',
         'data-pattern': 'password',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 

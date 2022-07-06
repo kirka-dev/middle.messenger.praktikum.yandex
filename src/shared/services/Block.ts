@@ -130,7 +130,6 @@ export class Block {
         const block = this.render();
         this._element.appendChild(block);
         this._addEvents();
-        this._addValidate();
     }
 
     render() {}
@@ -175,11 +174,5 @@ export class Block {
                 this._element.querySelector(child).addEventListener(eventName, this.props.childEvents[child][eventName]);
             });
         });
-    }
-
-    _addValidate() {
-        this._element.firstChild.querySelectorAll('input').forEach(input => {
-            input.addEventListener('blur', e => inputValidate(e.target))
-        })
     }
 }

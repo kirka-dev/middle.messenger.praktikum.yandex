@@ -1,6 +1,7 @@
 import {Block} from "../../shared/services/Block";
 import {Input} from "./components/input/input";
 import {Button} from "../../shared/components/button/button";
+import {inputValidate} from "../../shared/utils/validate";
 import {submitForm} from "../../shared/utils/submitForm";
 
 import {userSettingsTmpl} from "./user-settings.tmpl";
@@ -21,6 +22,11 @@ const inputEmail = new Input({
         id: 'email',
         name: 'email',
         'data-pattern': 'email',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -31,6 +37,11 @@ const inputLogin = new Input({
         name: 'login',
         required: true,
         'data-pattern': 'login',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -40,6 +51,11 @@ const inputFirstName = new Input({
         id: 'first_name',
         name: 'first_name',
         'data-pattern': 'name',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -49,6 +65,11 @@ const inputSecondName = new Input({
         id: 'second_name',
         name: 'second_name',
         'data-pattern': 'name',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -57,6 +78,11 @@ const inputDisplayName = new Input({
     attributes: {
         id: 'display_name',
         name: 'display_name'
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -66,6 +92,11 @@ const inputPhone = new Input({
         id: 'phone',
         name: 'phone',
         'data-pattern': 'phone',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -75,6 +106,11 @@ const inputOldPassword = new Input({
         type: 'password',
         id: 'oldPassword',
         name: 'oldPassword'
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -83,7 +119,13 @@ const inputNewPassword = new Input({
     attributes: {
         type: 'password',
         id: 'newPassword',
-        name: 'newPassword'
+        name: 'newPassword',
+        'data-pattern': 'password'
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 

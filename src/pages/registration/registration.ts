@@ -1,6 +1,7 @@
 import {Block} from "../../shared/services/Block";
 import {Input} from "../../shared/components/input/input";
 import {Button} from "../../shared/components/button/button";
+import {inputValidate} from "../../shared/utils/validate";
 import {submitForm} from "../../shared/utils/submitForm";
 
 import {registrationTmpl} from "./registration.tmpl";
@@ -22,6 +23,11 @@ const inputEmail = new Input({
         id: 'email',
         name: 'email',
         'data-pattern': 'email',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -31,6 +37,11 @@ const inputLogin = new Input({
         id: 'login',
         name: 'login',
         'data-pattern': 'login',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -40,6 +51,11 @@ const inputFirstName = new Input({
         id: 'first_name',
         name: 'first_name',
         'data-pattern': 'name',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -49,6 +65,11 @@ const inputSecondName = new Input({
         id: 'second_name',
         name: 'second_name',
         'data-pattern': 'name',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -58,6 +79,11 @@ const inputPhone = new Input({
         id: 'phone',
         name: 'phone',
         'data-pattern': 'phone',
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
@@ -68,6 +94,11 @@ const inputPassword = new Input({
         id: 'password',
         name: 'password',
         'data-pattern': 'password'
+    },
+    childEvents: {
+        input: {
+            blur: (e) => inputValidate(e.target),
+        },
     }
 });
 
