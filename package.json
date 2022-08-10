@@ -1,12 +1,14 @@
 {
-  "name": "Messenger",
+  "name": "messenger",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "default": "index.html",
   "scripts": {
     "start": "npm run build && node server.js",
-    "dev": "parcel src/pages/*.pug -d docs --port 3000 --open",
-    "build": "parcel build src/pages/*.pug -d docs --public-url ./"
+    "dev": "parcel src/index.pug --dist-dir docs --port 3000 --open --no-cache",
+    "build": "parcel build src/index.pug --dist-dir docs --public-url ./ --no-cache",
+    "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
+    "eslint:fix": "./node_modules/.bin/eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -15,15 +17,32 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/resolver-glob": "^2.6.2",
+    "@parcel/transformer-pug": "^2.6.2",
+    "@parcel/transformer-sass": "^2.6.2",
+    "@types/pug": "^2.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
     "express": "^4.18.1",
-    "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.5",
-    "pug": "^3.0.2",
-    "sass": "^1.52.3"
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.6.2",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-scss": "^4.2.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "static": "^2.0.0"
+    "normalize.css": "^8.0.1",
+    "pug": "^3.0.2",
+    "uuid": "^8.3.2"
   },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "engines": {
     "node": ">= 12.0.0"
   }
