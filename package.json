@@ -6,7 +6,6 @@
     "start": "npm run build && node server.js",
     "dev": "parcel src/index.html --dist-dir docs --no-cache --port 3000",
     "build": "parcel build src/index.html --dist-dir docs",
-    "preinstall": "npm set registry https://registry.npmjs.org/",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "eslint:fix": "./node_modules/.bin/eslint . --fix",
     "test": "mocha"
