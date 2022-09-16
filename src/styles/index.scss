@@ -1,0 +1,23 @@
+@import "global";
+
+/* COMPONENTS */
+@import "./src/components/common/button/button";
+@import "./src/components/common/file-input/file-input";
+@import "./src/components/common/input/input";
+@import "./src/components/common/route-button/route-button";
+@import "./src/components/messenger/button/button";
+@import "./src/components/messenger/header/header";
+@import "./src/components/messenger/item/item";
+@import "./src/components/messenger/menu/menu";
+@import "./src/components/messenger/menu-button/menu-button";
+@import "./src/components/messenger/menu-item/menu-item";
+@import "./src/components/messenger/message/message";
+@import "./src/components/messenger/textarea/textarea";
+@import "./src/components/messenger/user-item/user-item";
+@import "./src/components/modals/modals";
+
+/* PAGES */
+@import "./src/pages/login/login";
+@import "./src/pages/messenger/messenger";
+@import "./src/pages/settings/settings";
+@import "./src/pages/signup/signup";

@@ -1,0 +1,34 @@
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+}
+
+.login {
+    justify-self: center;
+    padding: 35px 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+
+    &__header {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        color: #101010;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &__form {
+        display: grid;
+        width: 100%;
+    }
+}

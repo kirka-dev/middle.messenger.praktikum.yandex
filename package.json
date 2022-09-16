@@ -1,49 +1,44 @@
 {
-  "name": "messenger",
+  "name": "test",
   "version": "1.0.0",
   "description": "",
-  "default": "index.html",
   "scripts": {
     "start": "npm run build && node server.js",
-    "dev": "parcel src/index.pug --dist-dir docs --port 3000 --open --no-cache",
-    "build": "parcel build src/index.pug --dist-dir docs --public-url ./ --no-cache",
+    "dev": "parcel src/index.html --dist-dir docs --no-cache --port 2000",
+    "build": "parcel build src/index.html --dist-dir docs",
+    "preinstall": "npm set registry https://registry.npmjs.org/",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
-    "eslint:fix": "./node_modules/.bin/eslint . --fix"
+    "eslint:fix": "./node_modules/.bin/eslint . --fix",
+    "test": "mocha"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kirka-dev/middle.messenger.praktikum.yandex.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/resolver-glob": "^2.6.2",
-    "@parcel/transformer-pug": "^2.6.2",
-    "@parcel/transformer-sass": "^2.6.2",
-    "@types/pug": "^2.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
-    "assert": "^2.0.0",
-    "buffer": "^6.0.3",
-    "eslint": "^8.19.0",
+    "@parcel/transformer-sass": "^2.7.0",
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.23.1",
     "eslint-config-airbnb": "^19.0.4",
-    "express": "^4.18.1",
-    "os-browserify": "^0.3.0",
-    "parcel": "^2.6.2",
-    "path-browserify": "^1.0.1",
-    "process": "^0.11.10",
-    "stylelint": "^14.9.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "mocha": "^10.0.0",
+    "mocha-jsdom": "^2.0.0",
+    "parcel": "^2.7.0",
+    "stylelint": "^14.11.0",
     "stylelint-config-recommended-scss": "^6.0.0",
-    "stylelint-scss": "^4.2.0",
+    "stylelint-scss": "^4.3.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "pug": "^3.0.2",
-    "uuid": "^8.3.2"
-  },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "engines": {
-    "node": ">= 12.0.0"
+    "express": "^4.18.1",
+    "handlebars": "^4.7.7",
+    "rimraf": "^3.0.2",
+    "uuid": "^9.0.0"
   }
 }
