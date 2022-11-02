@@ -1,0 +1,15 @@
+.route-button {
+    border: solid 1px #0ABAB5;
+    font-weight: 700;
+    font-size: 9px;
+    padding: 5px 5px;
+    background-color: initial;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0ABAB5;
+        color: #ffffff;
+    }
+}

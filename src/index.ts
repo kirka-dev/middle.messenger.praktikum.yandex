@@ -1,36 +1,17 @@
-// import 'normalize.css';
-import {Block} from "./shared/services/Block";
-import {render} from "./shared/utils/render";
-import {Authorization, Components as AuthorizationComponents} from "./pages/authorization/authorization";
-import {Registration, Components as RegistrationComponent} from "./pages/registration/registration";
-import {UserSettings, Components as UserSettingsComponent} from "./pages/user-settings/user-settings";
-import {Chat, Components as ChatComponents} from "./pages/chat/chat";
-import {ErrorPage} from "./pages/errorPage/errorPage";
+import Router from "./services/Router";
+import {LoginPage} from "./pages/login";
+import {MessengerPage} from "./pages/messenger";
+import {SettingsPage} from "./pages/settings";
+import {SignupPage} from "./pages/signup";
+import SettingsApi from "./pages/settings/settings.api";
 
-document.addEventListener("DOMContentLoaded", () => {
-    let page: Block;
-    switch(document.location.search) {
-        case "":
-            page = new Authorization({...AuthorizationComponents})
-            break;
-        case "?page=authorization":
-            page = new Authorization({...AuthorizationComponents})
-            break;
-        case "?page=registration":
-            page = new Registration({...RegistrationComponent})
-            break;
-        case "?page=settings":
-            page = new UserSettings({...UserSettingsComponent})
-            break;
-        case "?page=chat":
-            page = new Chat({...ChatComponents});
-            break;
-        case "?page=500":
-            page = new ErrorPage({code: 500});
-            break;
-        default:
-            page = new ErrorPage({code: 404});
-    }
+export const router = new Router("root");
 
-    render('.app', page);
-});
+router
+    .use("/", LoginPage)
+    .use("/messenger", MessengerPage)
+    .use("/settings", SettingsPage)
+    .use("/sign-up", SignupPage)
+    .start();
+
+SettingsApi.getUserInfo();

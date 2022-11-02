@@ -1,0 +1,11 @@
+.messenger-textarea {
+    background-color: #F2F2F2;
+    height: 75px;
+    padding: 20px 170px 20px 20px;
+    border-radius: 3px;
+    resize: none;
+
+    &::placeholder {
+        color: #45797A;
+    }
+}

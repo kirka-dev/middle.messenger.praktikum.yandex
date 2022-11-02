@@ -1,0 +1,52 @@
+.messenger {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 'chat-list chat';
+
+    &__chat-list {
+        grid-area: chat-list;
+        overflow-y: scroll;
+        height: 100%;
+    }
+
+    &__chat {
+        grid-area: chat;
+        border-left: solid 1px #0abab5;
+    }
+}
+
+.messenger-chat {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    height: 100vh;
+
+    &__header {
+        padding: 20px;
+        border-bottom: solid 1px #0abab5;
+    }
+
+    &__messages {
+        overflow-y: scroll;
+        height: 100%;
+        padding: 20px;
+        align-self: end;
+    }
+
+    &__send-message {
+        display: grid;
+        padding: 20px;
+        border-top: solid 1px #0abab5;
+    }
+}
+
+.send-message {
+    position: relative;
+
+    &__button {
+        width: 150px;
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+    }
+}

@@ -1,0 +1,40 @@
+.chat-list-item {
+    background-color: #F2F2F2;
+    padding: 20px;
+    display: grid;
+    border-bottom: solid 1px #ffffff;
+    grid-template-columns: 1fr min-content;
+    grid-template-areas: 'title unread'
+        'message unread';
+
+    &__title {
+        font-size: 9px;
+        text-transform: uppercase;
+        font-weight: 700;
+        grid-area: title;
+    }
+
+    &__message {
+        grid-area: message;
+        padding: 5px 0;
+        font-size: 14px;
+    }
+
+    &__unread {
+        display: grid;
+        align-self: center;
+        grid-area: unread;
+        background-color: #45797A;
+        width: 20px;
+        height: 20px;
+        align-content: center;
+        justify-content: center;
+        color: #F2F2F2;
+        font-size: 11px;
+        border-radius: 20px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

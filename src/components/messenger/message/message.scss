@@ -1,0 +1,17 @@
+.message {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 13px;
+    display: table;
+    background-color: #F2F2F2;
+    width: auto;
+
+    &_input {
+        background-color: #E5E5E5;
+    }
+
+    &_output {
+        margin-left: auto;
+    }
+}
