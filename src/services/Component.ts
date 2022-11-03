@@ -131,8 +131,7 @@ export default class Component {
     }
 
     _render() {
-        const block = this.render() as unknown as Node;
-
+        const block = this.render() as Node;
         //TODO: this._removeEvents();
         this._element.innerHTML = '';
 
@@ -141,7 +140,7 @@ export default class Component {
         this._addEvents();
     }
 
-    render() {}
+    render(): any {}
 
     getContent() {
         return this.element;
