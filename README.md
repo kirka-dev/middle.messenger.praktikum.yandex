@@ -3,6 +3,9 @@
 #### Описание проекта
 Webpack| Handlebars | Docker
 
+### Приложение на heroku
+https://myappmessenger.herokuapp.com/
+
 ### Использование
 >npm run start - запуск сборки и развертывание на 3000 порту.
 
