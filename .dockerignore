@@ -1,0 +1,5 @@
+.parcel-cache
+.github
+dist
+node_modules
+server
