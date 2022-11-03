@@ -60,7 +60,7 @@ export class SignupPage extends Component {
                 click: (e) => {
                     e.preventDefault();
 
-                    SignupApi.signIn(getFormData(e)).then((res) => {
+                    SignupApi.signIn(getFormData(e)).then((res: any) => {
                         if (res.status === 400) {
                             console.log('Error');
                         } else {

@@ -4,6 +4,7 @@ import {MessengerPage} from "./pages/messenger";
 import {SettingsPage} from "./pages/settings";
 import {SignupPage} from "./pages/signup";
 import SettingsApi from "./pages/settings/settings.api";
+import "./styles/index.scss";
 
 export const router = new Router("root");
 

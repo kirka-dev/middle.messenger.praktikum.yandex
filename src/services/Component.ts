@@ -16,8 +16,8 @@ export default class Component {
     _id = null;
 
     protected readonly props: any;
-    protected children: Child;
-    private eventBus: () => EventBus;
+    protected children: any;
+    protected eventBus: () => EventBus;
 
     constructor(tagName = "div", propsAndChildren = {}) {
         const { children, props } = this._getChildren(propsAndChildren);
@@ -73,7 +73,7 @@ export default class Component {
     _componentDidMount() {
         this.componentDidMount();
 
-        Object.values(this.children).forEach(child => {
+        Object.values(this.children).forEach((child: any) => {
             child.dispatchComponentDidMount();
         });
     }
@@ -111,7 +111,7 @@ export default class Component {
     compile(template, props) {
         const propsAndStubs = { ...props };
 
-        Object.entries(this.children).forEach(([key, child]) => {
+        Object.entries(this.children).forEach(([key, child]: any) => {
             propsAndStubs[key] = `<plug data-id="${child._id}"></plug>`
         });
 
@@ -121,7 +121,7 @@ export default class Component {
 
         fragment.innerHTML = html(propsAndStubs);
 
-        Object.values(this.children).forEach(child => {
+        Object.values(this.children).forEach((child: any) => {
             const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
 
             stub && stub.replaceWith(child.getContent());
