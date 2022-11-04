@@ -1,7 +1,6 @@
 import EventBus from "./EventBus";
 import {v4 as makeUUID} from 'uuid';
 import * as handlebars from "handlebars";
-import {Child} from "../interfaces/component";
 
 export default class Component {
     static EVENTS = {
