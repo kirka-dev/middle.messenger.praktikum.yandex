@@ -38,7 +38,7 @@ export class AddUserModalComponent extends Component {
             }
         })
 
-        this.setUserList()
+        this.setUserList(null)
     };
 
     setUserList(users) {

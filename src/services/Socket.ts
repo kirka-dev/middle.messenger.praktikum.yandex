@@ -1,5 +1,4 @@
 import store, {StoreUpdates} from "./Store";
-import * as events from "events";
 
 export default class Socket {
     private socket: WebSocket;
@@ -74,7 +73,7 @@ export default class Socket {
             }
         });
 
-        this.socket.addEventListener('error', event => {
+        this.socket.addEventListener('error', (event: any) => {
             console.log('Ошибка', event.message);
         });
     }

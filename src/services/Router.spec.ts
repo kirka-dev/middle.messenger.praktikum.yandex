@@ -1,19 +1,17 @@
 import Router from "./Router";
 import {expect} from "chai";
-import * as jsdom from 'mocha-jsdom';
+import {beforeEach} from "mocha";
 
 describe('Router', () => {
-    let fixture;
+  let fixture;
 
-    jsdom({ url: 'http://localhost' });
+  beforeEach(() => {
+    fixture = new Router('app');
+  })
 
-    beforeEach(() => {
-        fixture = new Router('app');
-    })
-
-    it('Should change history length', () => {
-        fixture.go('/example-1');
-        fixture.go('/example-2');
-        expect(fixture.history.length).to.eq(3);
-    });
+  it('Should change history length', () => {
+    fixture.go('/example-1');
+    fixture.go('/example-2');
+    expect(fixture.history.length).to.eq(3);
+  });
 });

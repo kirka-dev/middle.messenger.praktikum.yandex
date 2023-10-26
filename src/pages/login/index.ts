@@ -36,7 +36,7 @@ export class LoginPage extends Component {
                 click: (e) => {
                     e.preventDefault();
 
-                    LoginApi.signIn(getFormData(e)).then((res) => {
+                    LoginApi.signIn(getFormData(e)).then((res: any) => {
                         if (res.status === 400) {
                             console.log('Error');
                         } else {

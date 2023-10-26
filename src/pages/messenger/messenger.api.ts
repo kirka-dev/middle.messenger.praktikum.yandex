@@ -63,7 +63,7 @@ class MessengerApi {
                 'content-type': 'application/json'
             },
             data: JSON.stringify(data)
-        }).then((data) => JSON.parse(data.response));
+        }).then((data: any) => JSON.parse(data.response));
     }
 
     connectChat(id) {
